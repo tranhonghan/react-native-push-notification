@@ -131,6 +131,10 @@ NotificationsComponent.prototype.abandonPermissions = function() {
 	RNPushNotification.abandonPermissions();
 }
 
+NotificationsComponent.prototype.createChannel = function(channelId, soundName) {
+	RNPushNotification.createChannel(channelId, soundName)
+}
+
 module.exports = {
 	state: false,
 	component: new NotificationsComponent()

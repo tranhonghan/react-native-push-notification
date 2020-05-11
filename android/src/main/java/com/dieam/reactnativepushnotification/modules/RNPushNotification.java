@@ -277,4 +277,13 @@ public class RNPushNotification extends ReactContextBaseJavaModule implements Ac
           }
       }).start();
     }
+
+    @ReactMethod
+    /**
+     * Create channel for notification
+     */
+    public void createChannel(String channelId, String soundName) {
+        mRNPushNotificationHelper.createChannel(channelId, soundName);
+    }
+
 }

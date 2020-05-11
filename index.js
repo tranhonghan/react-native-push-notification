@@ -147,7 +147,7 @@ Notifications.localNotification = function(details) {
     if(details && typeof details.number === 'number') {
       details.number = '' + details.number;
     }
-  
+
 		this.handler.presentLocalNotification(details);
 	}
 };
@@ -193,7 +193,7 @@ Notifications.localNotificationSchedule = function(details) {
     if(details && typeof details.number === 'number') {
       details.number = '' + details.number;
     }
-  
+
 		details.fireDate = details.date.getTime();
 		delete details.date;
 		// ignore iOS only repeatType
@@ -359,6 +359,10 @@ Notifications.getDeliveredNotifications = function() {
 
 Notifications.removeDeliveredNotifications = function() {
 	return this.callNative('removeDeliveredNotifications', arguments);
+}
+
+Notifications.createChannel = function(channelId, soundName) {
+	return this.callNative('createChannel', arguments)
 }
 
 module.exports = Notifications;
